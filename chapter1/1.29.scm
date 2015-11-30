@@ -35,6 +35,8 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;1.29
+;;;;;;;;;;;;;;
 (define (even? n) (= (remainder n 2) 0))
 
 (define (sim-integral f a b n)
@@ -50,6 +52,30 @@
 
   (* (/ h 3.0)
       (sum ff 0 inc n)))
+
+
+;;;;;;;;;;;;;
+;1.30
+;;;;;;;;;;;;;
+(define (sum-in-iter term a next b)
+  (define (iter a result)
+    (if (> a b)
+        result
+        (iter (next a) (+ (term a) result))))
+  (iter a 0))
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
