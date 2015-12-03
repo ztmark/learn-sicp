@@ -53,12 +53,23 @@
 (define (d i)
   (let ((v (remainder (+ i 1) 3)))
     (if (= v 0)
-        (* v 2)
+        (* (/ (+ i 1) 3) 2)
         1)))
 
 ;;; e
 ;(+ (cont-frac (lambda (i) 1.0) d 100) 2)
 
+
+;;;;;; 1.39
+(define (tan-cf x k)
+  (define (tan-n i)
+    (if (= i 1)
+        x
+        (- (* x x))))
+  (define (tan-d i) (- (* 2 i) 1.0))
+  (cont-frac tan-n tan-d k))
+
+;;; tan(x) = (tan-cf x k)
 
 
 
