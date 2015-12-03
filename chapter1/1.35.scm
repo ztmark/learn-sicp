@@ -49,7 +49,15 @@
 
 ;; (/ 1.0 (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 100))
 
+;;;; 1.38
+(define (d i)
+  (let ((v (remainder (+ i 1) 3)))
+    (if (= v 0)
+        (* v 2)
+        1)))
 
+;;; e
+;(+ (cont-frac (lambda (i) 1.0) d 100) 2)
 
 
 
